@@ -1,5 +1,5 @@
 const express = require("express");
-
+const { default: genreRoutes } = require("./routes/genreRoutes");
 const { default: bookRoutes } = require("./routes/bookRoutes");
 require("dotenv").config({quiet: true});
 
@@ -8,7 +8,7 @@ app.use(express.json());
 
 
 app.use("/api/books", bookRoutes)
-
+app.use("/api/genre", genreRoutes)
 
 
 
